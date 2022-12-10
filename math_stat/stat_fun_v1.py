@@ -24,7 +24,7 @@ def stand_dev(a):
 
 
 # stage 1
-def count_stats(array) -> pd.Series:
+def count_stats(array: np.array) -> pd.Series:
     statistics_fun = {'expectation': expectation,
                       'dispersion': dispersion,
                       'standard_deviation': stand_dev,
@@ -35,7 +35,7 @@ def count_stats(array) -> pd.Series:
                              'standard_deviation',
                              'coefficient_of_variation'])
 
-    array = np.array(array)
+    array = array
     for stat in statistics_fun:
         stats.at[stat] = round(statistics_fun[stat](array), 2)
 

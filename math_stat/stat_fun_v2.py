@@ -33,7 +33,7 @@ def conf_int(a, p=0.9):
 
 
 # stage 1->2
-def count_stats(array) -> pd.Series:
+def count_stats(array: np.array) -> pd.Series:
     statistics_fun = {'Expectation': expectation,
                       'Dispersion': dispersion,
                       'Standard deviation': stand_dev,
@@ -47,7 +47,7 @@ def count_stats(array) -> pd.Series:
                              'Standard deviation',
                              'Coefficient of variation'])
 
-    array = np.array(array)
+    array = array
     for stat in statistics_fun:
         stats.at[stat] = round(statistics_fun[stat](array), 2)
     stats.at['Confidence interval (0.9)'] = conf_int(array, p=0.9)

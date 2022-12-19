@@ -1,5 +1,4 @@
 import sqlite3
-import sys
 
 
 def create_db(path: str, constant_names: list):

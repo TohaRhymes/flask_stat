@@ -1,5 +1,4 @@
 import sqlite3
-from typing import List
 
 
 def fill_db(path: str, constants: list):
